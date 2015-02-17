@@ -1,7 +1,9 @@
 require 'sinatra'
 
 get('/') do
-  'Hello! World'
+  @name = %w(Amigo Oscar Viking).sample
+  @age = rand(1..10)
+  erb(:index)
 end
 
 get('/secret') do
