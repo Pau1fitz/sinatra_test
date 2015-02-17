@@ -1,9 +1,15 @@
 <h1>Hello</h1>
 
 <div style='border: 10px dashed black'>
-
-  My name is <%= @name %> and I am <%= rand(10) %>
-
-
-  <img src='http://bit.ly/1eze8aE'>
+  <% if @visitor %>
+  hello, <%= @visitor %>
+  <% else %>
+  <form action = "/hello">
+    My name is <%= @name %>
+    What is your name?
+    <input type="text" name="name">
+    <input type="submit">
+  </form>
+  <% end %>
+  <img src='/images/hulk.png'>
 </div>
